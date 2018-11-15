@@ -24,28 +24,13 @@ class ArtistsRepository extends ServiceEntityRepository
 //     */
     public function findByField($field, $value, $select = null)
     {
-//        $select = ['a.description', 'a.token'];
         return $this->createQueryBuilder('a')
             ->select($select)
-//            ->select('a.description', 'a.cover')
             ->andWhere("a.$field = :val")
             ->setParameter('val', $value)
-//            ->orderBy('a.id', 'ASC')
-//            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
             ;
     }
 
-    /*
-    public function findOneBySomeField($value): ?Artists
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
