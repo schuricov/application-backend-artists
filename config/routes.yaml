@@ -1,3 +1,7 @@
 #index:
 #    path: /
-#    controller: App\Controller\DefaultController::index
+#    controller: App\Controller\MainController::init
+#
+#test:
+#    path: /test
+#    controller: App\Controller\MainController::test
